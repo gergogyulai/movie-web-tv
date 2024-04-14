@@ -73,25 +73,6 @@ export function KeyboardEvents() {
       const k = evt.key;
       const keyL = evt.key.toLowerCase();
 
-      // Volume
-      if (["ArrowUp", "ArrowDown", "m", "M"].includes(k)) {
-        dataRef.current.setShowVolume(true);
-
-        if (volumeDebounce.current) clearTimeout(volumeDebounce.current);
-        volumeDebounce.current = setTimeout(() => {
-          dataRef.current.setShowVolume(false);
-        }, 3e3);
-      }
-      if (k === "ArrowUp")
-        dataRef.current.setVolume(
-          (dataRef.current.mediaPlaying?.volume || 0) + 0.15,
-        );
-      if (k === "ArrowDown")
-        dataRef.current.setVolume(
-          (dataRef.current.mediaPlaying?.volume || 0) - 0.15,
-        );
-      if (keyL === "m") dataRef.current.toggleMute();
-
       // Video playback speed
       if (k === ">" || k === "<") {
         const options = [0.25, 0.5, 1, 1.5, 2];
@@ -118,7 +99,7 @@ export function KeyboardEvents() {
 
       // Utils
       if (keyL === "f") dataRef.current.display?.toggleFullscreen();
-      if (k === " " || keyL === "k")
+      if (k === " " || keyL === "k" || k === "Enter")
         dataRef.current.display?.[
           dataRef.current.mediaPlaying.isPaused ? "play" : "pause"
         ]();

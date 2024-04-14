@@ -59,11 +59,10 @@ export function PlayerPart(props: PlayerPartProps) {
           <div className="flex space-x-3 items-center">
             <Player.BackLink url={props.backUrl} />
             <span className="text mx-3 text-type-secondary">/</span>
-            <Player.Title />
             <Player.BookmarkButton />
           </div>
           <div className="text-center hidden xl:flex justify-center items-center">
-            <Player.EpisodeTitle />
+            &nbsp;
           </div>
           <div className="hidden sm:flex items-center justify-end">
             <BrandPill />
@@ -92,34 +91,27 @@ export function PlayerPart(props: PlayerPartProps) {
           <Player.LeftSideControls>
             {status === playerStatus.PLAYING ? (
               <>
-                <Player.Pause />
+                {/* <Player.Pause />
                 <Player.SkipBackward />
                 <Player.SkipForward />
-                <Player.Volume />
+                <Player.Volume /> */}
+                <Player.Title />
+                <Player.EpisodeTitle />
                 <Player.Time />
               </>
             ) : null}
           </Player.LeftSideControls>
           <div className="flex items-center space-x-3">
             <Player.Episodes />
-            {status === playerStatus.PLAYING ? (
-              <>
-                <Player.Pip />
-                <Player.Airplay />
-                <Player.Chromecast />
-              </>
-            ) : null}
             {status === playerStatus.PLAYBACK_ERROR ||
             status === playerStatus.PLAYING ? (
               <Player.Settings />
             ) : null}
-            <Player.Fullscreen />
           </div>
         </div>
         <div className="grid grid-cols-[2.5rem,1fr,2.5rem] gap-3 lg:hidden">
           <div />
           <div className="flex justify-center space-x-3">
-            {status === playerStatus.PLAYING ? <Player.Pip /> : null}
             <Player.Episodes />
             {status === playerStatus.PLAYING ? <Player.Settings /> : null}
           </div>

@@ -92,7 +92,7 @@
     "tagline": "在这个开源流媒体应用上观看你最喜爱的影视剧或其他节目。"
   },
   "global": {
-    "name": "movie-web",
+    "name": "movie-web-tv",
     "pages": {
       "about": "关于",
       "dmca": "DMCA",

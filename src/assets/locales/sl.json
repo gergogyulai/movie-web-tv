@@ -92,7 +92,7 @@
     "tagline": "Z odprtokodno aplikacijo movie-web si oglejte najljubše oddaje in filme."
   },
   "global": {
-    "name": "movie-web",
+    
     "pages": {
       "about": "O projektu",
       "dmca": "DMCA",

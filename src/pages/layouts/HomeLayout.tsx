@@ -6,9 +6,9 @@ export function HomeLayout(props: {
   children: React.ReactNode;
 }) {
   return (
-    <FooterView>
+    <>
       <Navigation bg={props.showBg} />
       {props.children}
-    </FooterView>
+    </>
   );
 }
